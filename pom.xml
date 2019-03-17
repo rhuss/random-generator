@@ -48,12 +48,6 @@
       <artifactId>quarkus-smallrye-health</artifactId>
     </dependency>
 
-    <plugin>
-      <groupId>io.fabric8</groupId>
-      <artifactId>fabric8-maven-plugin</artifactId>
-      <version>4.1-SNAPSHOT</version>
-    </plugin>
-
   </dependencies>
 
   <build>
@@ -71,6 +65,13 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>fabric8-maven-plugin</artifactId>
+        <version>4.1-SNAPSHOT</version>
+      </plugin>
+
     </plugins>
   </build>
   <profiles>
