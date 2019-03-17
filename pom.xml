@@ -12,6 +12,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <fabric8.enricher.fmp-service.type>NodePort</fabric8.enricher.fmp-service.type>
   </properties>
 
   <dependencyManagement>
@@ -46,6 +47,12 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-smallrye-health</artifactId>
     </dependency>
+
+    <plugin>
+      <groupId>io.fabric8</groupId>
+      <artifactId>fabric8-maven-plugin</artifactId>
+      <version>4.1-SNAPSHOT</version>
+    </plugin>
 
   </dependencies>
 
