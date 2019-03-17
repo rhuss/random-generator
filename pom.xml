@@ -82,6 +82,12 @@
           <name>native</name>
         </property>
       </activation>
+
+      <properties>
+        <fabric8.generator.name>k8spatterns/random-generator-native</fabric8.generator.name>
+        <fabric8.generator.quarkus.nativeImage>true</fabric8.generator.quarkus.nativeImage>
+      </properties>
+
       <build>
         <plugins>
           <plugin>
@@ -95,6 +101,7 @@
                 </goals>
                 <configuration>
                   <enableHttpUrlHandler>true</enableHttpUrlHandler>
+                  <dockerBuild>true</dockerBuild>
                 </configuration>
               </execution>
             </executions>
