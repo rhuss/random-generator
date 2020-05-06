@@ -20,6 +20,19 @@ public class RandomResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public RandomResponse random() {
+        waitIfRequested();
         return new RandomResponse(service.getUUID(), service.getRandom());
+    }
+
+    private void waitIfRequested() {
+        String delay = System.getenv("DELAY");
+        if (delay != null) {
+            long delayMs = Long.parseLong(delay);
+            try {
+                Thread.sleep(delayMs);
+            } catch (InterruptedException e) {
+            }
+        }
+
     }
 }

@@ -8,7 +8,7 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class RandomGeneratorService {
 
-    private static UUID id = UUID.randomUUID();
+    private static UUID id;
     private static Random random = new Random();
 
     public int getRandom() {
@@ -16,6 +16,9 @@ public class RandomGeneratorService {
     }
 
     public UUID getUUID() {
+        if (id == null) {
+            id = UUID.randomUUID();
+        }
         return id;
     }
 }

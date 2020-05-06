@@ -9,10 +9,16 @@ public class RandomResponse {
 
     private UUID id;
     private int random;
+    private String version;
 
     RandomResponse(UUID id, int random) {
         this.id = id;
         this.random = random;
+
+        this.version = System.getenv("VERSION");
+        if (this.version == null) {
+            this.version = "2.0";
+        }
     }
 
     public String getId() {
@@ -21,5 +27,9 @@ public class RandomResponse {
 
     public int getRandom() {
         return random;
+    }
+
+    public String getVersion() {
+        return version;
     }
 }
