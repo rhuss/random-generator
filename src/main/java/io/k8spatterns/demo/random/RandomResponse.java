@@ -17,7 +17,7 @@ public class RandomResponse {
 
         this.version = System.getenv("VERSION");
         if (this.version == null) {
-            this.version = "2.0";
+            this.version = "1.0";
         }
     }
 

@@ -8,8 +8,8 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class RandomGeneratorService {
 
-    private static UUID id;
-    private static Random random = new Random();
+    private UUID id;
+    private Random random = new Random();
 
     public int getRandom() {
         return random.nextInt();
