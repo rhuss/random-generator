@@ -1,0 +1,15 @@
+FROM adoptopenjdk/maven-openjdk11 as BUILD
+  
+COPY src /usr/src/app/src
+COPY ./pom.xml /usr/src/app
+WORKDIR /usr/src/app
+RUN mvn install
+ 
+FROM openjdk
+ 
+COPY --from=BUILD /usr/src/app/target/quarkus-app /opt/
+ 
+EXPOSE 8080
+USER 1001
+ 
+ENTRYPOINT [ "java", "-jar", "/opt/quarkus-run.jar" ]
